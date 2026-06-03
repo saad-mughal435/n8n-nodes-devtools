@@ -1,0 +1,51 @@
+{
+	"name": "DevTools — JWT sign & verify",
+	"nodes": [
+		{
+			"parameters": {},
+			"id": "b1a7e0c0-0001-4a00-8000-000000000001",
+			"name": "When clicking 'Test workflow'",
+			"type": "n8n-nodes-base.manualTrigger",
+			"typeVersion": 1,
+			"position": [240, 300]
+		},
+		{
+			"parameters": {
+				"resource": "jwt",
+				"operation": "sign",
+				"payload": "{\n  \"sub\": \"42\",\n  \"name\": \"Ada Lovelace\",\n  \"role\": \"admin\"\n}",
+				"algorithm": "HS256",
+				"jwtSecret": "demo-secret-change-me",
+				"expiresIn": "1h"
+			},
+			"id": "b1a7e0c0-0002-4a00-8000-000000000002",
+			"name": "Sign JWT",
+			"type": "n8n-nodes-devtools.devTools",
+			"typeVersion": 1,
+			"position": [480, 300]
+		},
+		{
+			"parameters": {
+				"resource": "jwt",
+				"operation": "verify",
+				"token": "={{ $json.token }}",
+				"jwtSecret": "demo-secret-change-me",
+				"algorithms": ["HS256"]
+			},
+			"id": "b1a7e0c0-0003-4a00-8000-000000000003",
+			"name": "Verify JWT",
+			"type": "n8n-nodes-devtools.devTools",
+			"typeVersion": 1,
+			"position": [720, 300]
+		}
+	],
+	"connections": {
+		"When clicking 'Test workflow'": {
+			"main": [[{ "node": "Sign JWT", "type": "main", "index": 0 }]]
+		},
+		"Sign JWT": {
+			"main": [[{ "node": "Verify JWT", "type": "main", "index": 0 }]]
+		}
+	},
+	"settings": { "executionOrder": "v1" }
+}

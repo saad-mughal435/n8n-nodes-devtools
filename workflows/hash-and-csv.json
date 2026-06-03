@@ -1,0 +1,49 @@
+{
+	"name": "DevTools — JSON to CSV, then hash it",
+	"nodes": [
+		{
+			"parameters": {},
+			"id": "c2b8f1d0-0001-4b00-8000-000000000001",
+			"name": "When clicking 'Test workflow'",
+			"type": "n8n-nodes-base.manualTrigger",
+			"typeVersion": 1,
+			"position": [240, 300]
+		},
+		{
+			"parameters": {
+				"resource": "convert",
+				"operation": "jsonToCsv",
+				"records": "[\n  { \"id\": 1, \"city\": \"Dubai\" },\n  { \"id\": 2, \"city\": \"Abu Dhabi\" }\n]",
+				"delimiter": ","
+			},
+			"id": "c2b8f1d0-0002-4b00-8000-000000000002",
+			"name": "JSON to CSV",
+			"type": "n8n-nodes-devtools.devTools",
+			"typeVersion": 1,
+			"position": [480, 300]
+		},
+		{
+			"parameters": {
+				"resource": "hash",
+				"operation": "hash",
+				"data": "={{ $json.csv }}",
+				"hashAlgorithm": "sha256",
+				"encoding": "hex"
+			},
+			"id": "c2b8f1d0-0003-4b00-8000-000000000003",
+			"name": "SHA-256 of CSV",
+			"type": "n8n-nodes-devtools.devTools",
+			"typeVersion": 1,
+			"position": [720, 300]
+		}
+	],
+	"connections": {
+		"When clicking 'Test workflow'": {
+			"main": [[{ "node": "JSON to CSV", "type": "main", "index": 0 }]]
+		},
+		"JSON to CSV": {
+			"main": [[{ "node": "SHA-256 of CSV", "type": "main", "index": 0 }]]
+		}
+	},
+	"settings": { "executionOrder": "v1" }
+}

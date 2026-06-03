@@ -1,0 +1,71 @@
+{
+  "name": "n8n-nodes-devtools",
+  "version": "0.1.0",
+  "description": "n8n community node with developer & crypto utilities: JWT sign/verify, hashing (SHA-256/HMAC), UUID/Nano ID, JSON<->CSV, base64, and regex extraction.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "n8n-node",
+    "jwt",
+    "hash",
+    "hmac",
+    "sha256",
+    "uuid",
+    "nanoid",
+    "csv",
+    "base64",
+    "regex",
+    "automation"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/saad-mughal435/n8n-nodes-devtools",
+  "author": {
+    "name": "Muhammad Saad",
+    "email": "saad@saadm.dev",
+    "url": "https://saadm.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saad-mughal435/n8n-nodes-devtools.git"
+  },
+  "engines": {
+    "node": ">=20.15"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && node scripts/copy-icons.mjs",
+    "dev": "tsc --watch",
+    "lint": "eslint nodes --ext .ts",
+    "lintfix": "eslint nodes --ext .ts --fix",
+    "test": "jest",
+    "prepublishOnly": "npm run build && npm run lint"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/DevTools/DevTools.node.js"
+    ]
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.3",
+    "jest": "^29.7.0",
+    "n8n-workflow": "*",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.5.4"
+  }
+}

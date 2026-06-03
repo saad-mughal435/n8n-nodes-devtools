@@ -1,0 +1,33 @@
+{
+	"name": "DevTools — regex extract named groups",
+	"nodes": [
+		{
+			"parameters": {},
+			"id": "d3c9a2e0-0001-4c00-8000-000000000001",
+			"name": "When clicking 'Test workflow'",
+			"type": "n8n-nodes-base.manualTrigger",
+			"typeVersion": 1,
+			"position": [240, 300]
+		},
+		{
+			"parameters": {
+				"resource": "extract",
+				"operation": "regex",
+				"text": "Invoice INV-2026-0042 issued 2026-06-03",
+				"pattern": "INV-(?<year>\\d{4})-(?<seq>\\d{4}).*?(?<date>\\d{4}-\\d{2}-\\d{2})",
+				"flags": ""
+			},
+			"id": "d3c9a2e0-0002-4c00-8000-000000000002",
+			"name": "Extract invoice fields",
+			"type": "n8n-nodes-devtools.devTools",
+			"typeVersion": 1,
+			"position": [480, 300]
+		}
+	],
+	"connections": {
+		"When clicking 'Test workflow'": {
+			"main": [[{ "node": "Extract invoice fields", "type": "main", "index": 0 }]]
+		}
+	},
+	"settings": { "executionOrder": "v1" }
+}

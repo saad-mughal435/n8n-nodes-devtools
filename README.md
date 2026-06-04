@@ -12,6 +12,8 @@ crypto utilities you keep reaching for mid-workflow — **JWT sign/verify, hashi
 (SHA-256/512 + HMAC), UUID / Nano ID, JSON↔CSV, base64, and regex extraction** —
 so you don't have to drop into a Code node for them.
 
+![The DevTools node in n8n — the Sign JWT operation, showing Resource/Operation selectors, the JSON payload editor, the algorithm picker, a masked secret field, and token expiry](https://raw.githubusercontent.com/saad-mughal435/n8n-nodes-devtools/main/docs/n8n-node.png)
+
 > **Why this exists.** I'm [Muhammad Saad](https://saadm.dev) — I build and run
 > automation and backend systems. Every real workflow eventually needs to sign a
 > token, hash a payload, mint an ID, reshape a CSV, or pull fields out of a blob
@@ -63,6 +65,8 @@ npm link n8n-nodes-devtools
 Restart n8n and the **DevTools** node appears in the node panel.
 
 ## Example workflows
+
+![A DevTools workflow in the n8n editor: a manual trigger feeding Sign JWT, then Verify JWT](https://raw.githubusercontent.com/saad-mughal435/n8n-nodes-devtools/main/docs/n8n-workflow.png)
 
 Importable JSON lives in [`workflows/`](workflows/):
 

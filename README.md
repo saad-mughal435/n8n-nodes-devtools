@@ -1,6 +1,7 @@
 # n8n-nodes-devtools
 
 [![CI](https://github.com/saad-mughal435/n8n-nodes-devtools/actions/workflows/ci.yml/badge.svg)](https://github.com/saad-mughal435/n8n-nodes-devtools/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/n8n-nodes-devtools)](https://www.npmjs.com/package/n8n-nodes-devtools)
 [![Node](https://img.shields.io/badge/Node-%E2%89%A520.15-339933)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
@@ -40,9 +41,15 @@ item per input item. Enable **Continue On Fail** to capture errors as
 ## Install
 
 **In n8n (self-hosted):** Settings → **Community Nodes** → **Install**, then enter
-`n8n-nodes-devtools`. _(npm publish is pending — see below.)_
+`n8n-nodes-devtools`.
 
-**From source, right now:**
+**Or via npm:**
+
+```bash
+npm install n8n-nodes-devtools
+```
+
+**From source:**
 
 ```bash
 git clone https://github.com/saad-mughal435/n8n-nodes-devtools.git

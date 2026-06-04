@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-devtools",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "n8n community node with developer & crypto utilities: JWT sign/verify, hashing (SHA-256/HMAC), UUID/Nano ID, JSON<->CSV, base64, and regex extraction.",
   "keywords": [
     "n8n-community-node-package",

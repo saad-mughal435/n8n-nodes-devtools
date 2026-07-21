@@ -56,14 +56,14 @@
     "n8n-workflow": "*"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^30.0.0",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.14.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "eslint": "^8.57.0",
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
-    "jest": "^29.7.0",
+    "jest": "^30.4.2",
     "n8n-workflow": "*",
     "ts-jest": "^29.2.5",
     "typescript": "^5.5.4"

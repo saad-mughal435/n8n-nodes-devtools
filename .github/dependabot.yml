@@ -10,6 +10,10 @@ updates:
       # is still eslintrc-only; stay on 8.x until that plugin supports flat config.
       - dependency-name: "eslint"
         update-types: ["version-update:semver-major"]
+      # TypeScript 7 (native compiler) is outside typescript-eslint v8's peer range;
+      # stay on 5.x until the lint toolchain supports it.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
